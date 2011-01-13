@@ -1,0 +1,45 @@
+snippet getset
+	public function get${1:PropertyName}() {
+	    return $this->${2:propertyName};
+	}
+	public function set$1($$2) {
+	    $this->$2 = $$2;
+	}
+
+snippet sf2action
+	public function ${1:name}Action()
+	{
+	    ${2}
+	}
+
+snippet sf2getem
+	$em = $this->container->get('doctrine.orm.entity_manager');
+
+snippet sf2findall
+	$${1:collection} = $em->getRepository('${2:Bundle}:${3:Entity}')->findAll();
+
+snippet sf2entity
+	namespace Application\${1:Bundle}\Entity;
+
+	/**
+	 * @orm:Entity
+	 */
+	class ${2:Class}
+	{
+	    ${3}
+	}
+
+snippet sf2entity_id
+	/**
+	 * @orm:Id
+	 * @orm:Collumn(type="integer")
+	 * @orm:GeneratedValue(strategy="IDENTITY")
+	 */
+	${1}
+
+snippet sf2entity_string
+	/**
+	 * @orm:Column(type="string", length="${1}")
+	 */
+	${2}
+
